@@ -1,0 +1,236 @@
+/* Podstawowe style i zmienne */
+:root {
+    --background: #000000;
+    --primary: #ffffff;
+    --card: #111111;
+    --border: #222222;
+    --sunset: #f97316;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    antialiased: true;
+    line-height: 1.5;
+}
+
+/* Nagłówek */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    backdrop-filter: blur(12px);
+    background-color: rgba(0, 0, 0, 0.85);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+}
+
+.logo-svg {
+    width: 51px;
+    height: auto;
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+}
+
+.nav-links a {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 12px;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* Przyciski */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 10px 18px;
+    transition: 0.2s;
+}
+
+.btn-soft {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--primary);
+}
+
+.btn-soft:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-solid {
+    background-color: var(--primary);
+    color: var(--background);
+}
+
+.btn-solid:hover {
+    opacity: 0.9;
+}
+
+.btn-lg {
+    padding: 12px 20px;
+    font-size: 16px;
+}
+
+/* Główna sekcja (Hero) */
+.main-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 140px 24px 80px 24px;
+}
+
+.hero-container {
+    text-align: center;
+    max-width: 768px;
+    margin: 0 auto 80px auto;
+}
+
+.hero-badge-wrapper {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 12px 6px 10px;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 9999px;
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 13px;
+}
+
+.badge-tag {
+    background-color: rgba(249, 115, 22, 0.1);
+    color: var(--sunset);
+    padding: 3px 8px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.hero-title {
+    font-size: 56px;
+    font-weight: 450;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-desc {
+    font-size: 18px;
+    color: #a1a1aa;
+    line-height: 1.6;
+    margin-bottom: 36px;
+}
+
+.hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* Kafelki / Czat pod hero */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+}
+
+.card {
+    grid-column: span 2;
+    background-color: var(--card);
+    border-radius: 16px;
+    height: 280px;
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--border);
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    padding: 20px;
+    gap: 10px;
+}
+
+.chat-bubble {
+    max-width: 82%;
+    padding: 8px 14px;
+    border-radius: 14px;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.chat-bubble.user {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: var(--primary);
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+.chat-bubble.ai {
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #d4d4d8;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .nav-links, .nav-actions .btn-soft {
+        display: none;
+    }
+    .hero-title {
+        font-size: 36px;
+    }
+    .card {
+        grid-column: span 6;
+    }
+}
