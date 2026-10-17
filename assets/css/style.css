@@ -20,14 +20,17 @@ body {
     line-height: 1.5;
 }
 
-/* Nagłówek bez górnego paska */
+/* Nagłówek fixed */
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 50;
+    z-index: 100;
     padding: 24px;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .header-container {
@@ -50,7 +53,6 @@ body {
     color: var(--primary);
 }
 
-/* Trzy odnośniki w pionie pod logo */
 .sidebar-nav {
     display: flex;
     flex-direction: column;
@@ -74,7 +76,7 @@ body {
     gap: 12px;
 }
 
-/* Przyciski */
+/* Style przycisków: biała obwódka i tekst -> po najechaniu białe tło i czarny tekst */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -84,44 +86,44 @@ body {
     font-weight: 500;
     text-decoration: none;
     padding: 10px 18px;
-    transition: 0.2s;
-}
-
-.btn-soft {
-    background-color: rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease-in-out;
+    background-color: transparent;
     color: var(--primary);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--primary);
 }
 
-.btn-soft:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.btn-solid {
+.btn:hover {
     background-color: var(--primary);
     color: var(--background);
 }
 
-.btn-solid:hover {
-    opacity: 0.9;
-}
-
 .btn-lg {
-    padding: 12px 20px;
+    padding: 12px 24px;
     font-size: 16px;
 }
 
-/* Sekcja Główna (Hero) */
+.btn-soft, .btn-solid {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.btn-soft:hover, .btn-solid:hover {
+    background-color: var(--primary);
+    color: var(--background);
+}
+
+/* Główny kontener */
 .main-content {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 160px 24px 80px 24px;
+    padding: 200px 24px 80px 24px;
 }
 
 .hero-container {
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto 70px auto;
+    max-width: 820px;
+    margin: 0 auto 100px auto;
 }
 
 .hero-badge-wrapper {
@@ -152,15 +154,20 @@ body {
 }
 
 .hero-title {
-    font-size: 52px;
+    font-size: 50px;
     font-weight: 450;
     letter-spacing: -0.03em;
-    line-height: 1.1;
+    line-height: 1.15;
     margin-bottom: 20px;
 }
 
-.highlight {
+/* Animowane rotujące słowo */
+.rotating-word {
     color: var(--sunset);
+    display: inline-block;
+    transition: opacity 0.2s ease-in-out;
+    min-width: 180px;
+    text-align: left;
 }
 
 .hero-desc {
@@ -176,73 +183,123 @@ body {
     gap: 12px;
 }
 
-/* Kafelki z korzyściami (Siatka 3 kolumny) */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+/* Style dla 5 sekcji zalet (pionowe układy) */
+.advantages-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.card {
+.advantage-card {
     background-color: var(--card);
-    border-radius: 16px;
-    min-height: 200px;
     border: 1px solid var(--border);
-    transition: border-color 0.2s;
+    border-radius: 20px;
+    padding: 40px;
+    transition: border-color 0.2s ease;
 }
 
-.card:hover {
+.advantage-card:hover {
     border-color: rgba(255, 255, 255, 0.2);
 }
 
-.card-content {
+.advantage-header {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: 100%;
-    padding: 24px;
-    gap: 8px;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
 }
 
-.benefit-tag {
-    font-size: 11px;
+.advantage-num {
+    font-size: 14px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
     color: var(--sunset);
+    background-color: rgba(249, 115, 22, 0.1);
+    padding: 4px 10px;
+    border-radius: 9999px;
 }
 
-.benefit-title {
-    font-size: 18px;
-    font-weight: 600;
+.advantage-header h2 {
+    font-size: 28px;
+    font-weight: 500;
     color: var(--primary);
-    margin-top: 4px;
 }
 
-.benefit-desc {
+.advantage-lead {
+    font-size: 18px;
+    font-weight: 500;
+    color: #e4e4e7;
+    margin-bottom: 12px;
+}
+
+.advantage-text {
+    font-size: 15px;
+    color: #a1a1aa;
+    line-height: 1.6;
+}
+
+/* Stopka (Footer) oddzielona białą linią */
+.footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px 24px;
+    margin-top: 80px;
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer-copyright {
     font-size: 14px;
     color: #a1a1aa;
-    line-height: 1.5;
 }
 
-/* RWD - Responsywność dla urządzeń mobilnych */
+.footer-links {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-links a {
+    color: #a1a1aa;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+}
+
+/* Responsywność */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
         gap: 16px;
     }
-    
-    .nav-actions {
-        width: 100%;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-    }
-    
+
     .hero-title {
-        font-size: 34px;
+        font-size: 32px;
     }
-    
-    .grid-container {
-        grid-template-columns: 1fr;
+
+    .rotating-word {
+        min-width: auto;
+        display: inline;
+    }
+
+    .advantage-card {
+        padding: 24px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
     }
 }
