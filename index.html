@@ -3,17 +3,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebCard - Twoja nowoczesna wizytówka internetowa</title>
-    <meta name="description" content="SpaceXSI tworzy Grok — zaawansowane modele sztucznej inteligencji do wnioskowania, generowania głosu, obrazów i nie tylko.">
+    <title>WebCard - Szybkie wizytówki internetowe bez abonamentu</title>
+    <meta name="description" content="Tworzymy ultraszybkie wizytówki internetowe dla Twojej firmy. Płacisz raz, brak kosztów utrzymania, hosting 0 zł na zawsze i święty spokój.">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- Nagłówek strony (bez górnego paska, logo po lewej, przyciski po prawej) -->
+    <!-- Nagłówek (logo po lewej, pionowe menu pod nim, dwa przyciski po prawej) -->
     <header class="header">
         <div class="header-container">
             <div class="header-left">
-                <!-- Logo -->
-                <a href="/" class="logo-link" aria-label="Strona główna SpaceXSI">
+                <!-- Logo (własne lub tymczasowe SVG) -->
+                <a href="/" class="logo-link" aria-label="Strona główna WebCard">
                     <svg width="63" height="24" viewBox="40 0 2176 831" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
                         <path d="M352 522 57 305H308L490 436Q417 478 352 522ZM766 831 545 668Q619 612 670 576L1018 831ZM294 831H40L70 803Q208 668 450.5 506.5Q693 345 1145.5 190Q1598 35 2216 0Q1995 19 1684.5 88.5Q1374 158 989 339Q604 520 294 831Z"></path>
                     </svg>
@@ -21,16 +21,16 @@
                 
                 <!-- Trzy odnośniki menu jeden pod drugim pod logo -->
                 <nav class="sidebar-nav">
-                    <a href="/grok">Produkty</a>
-                    <a href="https://docs.x.ai" target="_blank">Dokumentacja</a>
-                    <a href="/pricing">Cennik</a>
+                    <a href="#oferta">Oferta</a>
+                    <a href="#zalety">Dlaczego My?</a>
+                    <a href="#kontakt">Kontakt</a>
                 </nav>
             </div>
 
             <!-- Dwa przyciski po prawej stronie -->
             <div class="nav-actions">
-                <a href="/contact-sales" class="btn btn-soft">Kontakt z działem sprzedaży</a>
-                <a href="https://grok.com" target="_blank" class="btn btn-solid">Wypróbuj za darmo</a>
+                <a href="#kontakt" class="btn btn-soft">Zamów wycenę</a>
+                <a href="#oferta" class="btn btn-solid">Sprawdź pakiety</a>
             </div>
         </div>
     </header>
@@ -38,42 +38,54 @@
     <!-- Główna sekcja Hero -->
     <main class="main-content">
         <div class="hero-container">
-            <!-- Powiadomienie -->
+            <!-- Powiadomienie / Badge -->
             <div class="hero-badge-wrapper">
-                <a href="/news/grok-4-7" class="hero-badge">
-                    <span class="badge-tag">Nowość</span>
-                    <span class="badge-text"><strong>Poznaj Grok 4.7</strong> · Nasz nowy model</span>
-                    <span class="badge-arrow">→</span>
-                </a>
+                <div class="hero-badge">
+                    <span class="badge-tag">Nowy Standard</span>
+                    <span class="badge-text"><strong>Bezpieczne i lekkie strony</strong> · Zero awarii i wtyczek</span>
+                </div>
             </div>
 
-            <!-- Tytuł główny -->
+            <!-- Tytuł główny z efektem lub gotowym mocnym przekazem -->
             <h1 class="hero-title">
-                Najnowocześniejsze modele AI do wszystkiego, co tworzysz.
+                Tworzymy strony internetowe bez zbędnego balastu. Zero abonamentów, zero awarii, zero <span class="highlight">ukrytych kosztów</span>.
             </h1>
 
             <!-- Opis -->
             <div class="hero-desc">
-                <p>Wnioskowanie, kod, głos, obrazy i wideo. Wytrenowane na największym superkomputerze na świecie.</p>
+                <p>Błyskawiczna wizytówka dla Twojej firmy. Płacisz raz za wdrożenie, a strona działa wiecznie na darmowym hoostingu zoptymalizowanym pod Google i AI.</p>
             </div>
 
             <!-- Przyciski CTA -->
             <div class="hero-cta">
-                <a href="https://console.x.ai" class="btn btn-solid btn-lg">Uzyskaj dostęp do API →</a>
-                <a href="https://docs.x.ai" class="btn btn-soft btn-lg">Zobacz dokumentację</a>
+                <a href="#kontakt" class="btn btn-solid btn-lg">Rozpocznij współpracę →</a>
+                <a href="#zalety" class="btn btn-soft btn-lg">Dowiedz się więcej</a>
             </div>
         </div>
 
-        <!-- Sekcja kafelka czatu -->
+        <!-- Sekcja kart korzyści (zastępująca dawny czat AI) -->
         <div class="grid-container">
-            <a href="/grok" class="card">
+            <div class="card">
                 <div class="card-content">
-                    <div class="chat-bubble user">Wyjaśnij splątanie kwantowe w prosty sposób</div>
-                    <div class="chat-bubble ai">Dwie cząstczki zostają powiązane — zmierzona jedna natychmiast określa drugą, niezależnie od odległości.</div>
-                    <div class="chat-bubble user">Dlaczego niebo jest niebieskie?</div>
-                    <div class="chat-bubble ai">Krótsze niebieskie fale rozpraszają się silniej na cząsteczkach powietrza...</div>
+                    <div class="benefit-tag">01. Prędkość</div>
+                    <div class="benefit-title">Błyskawiczne ładowanie</div>
+                    <div class="benefit-desc">Strona otwiera się w ułamku sekundy na każdym telefonie, zatrzymując klienta na dłużej.</div>
                 </div>
-            </a>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="benefit-tag">02. Portfel</div>
+                    <div class="benefit-title">Hosting 0 zł na zawsze</div>
+                    <div class="benefit-desc">Żadnych corocznych, drogich opłat za serwery. Płacisz raz za projekt i masz święty spokój.</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="benefit-tag">03. Bezpieczeństwo</div>
+                    <div class="benefit-title">Brak podatności na awarie</div>
+                    <div class="benefit-desc">Brak bazy danych i wtyczek oznacza, że strona nie ma się jak zepsuć ani zostać zhakowana.</div>
+                </div>
+            </div>
         </div>
     </main>
 </body>
