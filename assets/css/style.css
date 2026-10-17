@@ -1,4 +1,3 @@
-/* Podstawowe style i zmienne */
 :root {
     --background: #000000;
     --primary: #ffffff;
@@ -17,7 +16,7 @@ body {
     background-color: var(--background);
     color: var(--primary);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    antialiased: true;
+    -webkit-font-smoothing: antialiased;
     line-height: 1.5;
 }
 
@@ -31,19 +30,21 @@ body {
     backdrop-filter: blur(12px);
     background-color: rgba(0, 0, 0, 0.85);
     border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
 }
 
 .header-container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 24px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
-.nav {
+.header-left {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 64px;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .logo-svg {
@@ -52,23 +53,23 @@ body {
     color: var(--primary);
 }
 
-.nav-links {
+/* Menu pod logo (jeden pod drugim) */
+.sidebar-nav {
     display: flex;
-    list-style: none;
-    gap: 8px;
+    flex-direction: column;
+    gap: 6px;
 }
 
-.nav-links a {
-    color: var(--primary);
+.sidebar-nav a {
+    color: #a1a1aa;
     text-decoration: none;
     font-size: 13px;
     font-weight: 500;
-    padding: 6px 12px;
     transition: color 0.2s;
 }
 
-.nav-links a:hover {
-    opacity: 0.8;
+.sidebar-nav a:hover {
+    color: var(--primary);
 }
 
 .nav-actions {
@@ -112,11 +113,11 @@ body {
     font-size: 16px;
 }
 
-/* Główna sekcja (Hero) */
+/* Sekcja Hero */
 .main-content {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 140px 24px 80px 24px;
+    padding: 160px 24px 80px 24px;
 }
 
 .hero-container {
@@ -174,7 +175,7 @@ body {
     gap: 12px;
 }
 
-/* Kafelki / Czat pod hero */
+/* Kafelki */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -224,8 +225,13 @@ body {
 }
 
 @media (max-width: 768px) {
-    .nav-links, .nav-actions .btn-soft {
-        display: none;
+    .header-container {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .nav-actions {
+        width: 100%;
+        justify-content: space-between;
     }
     .hero-title {
         font-size: 36px;
