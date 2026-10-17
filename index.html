@@ -1,80 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebCard</title>
-    <meta name="description" content="SpaceXSI builds Grok — frontier AI models for reasoning, voice, image generation, and more. Build with the Grok API.">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>WebCard - Twoja nowoczesna wizytówka internetowa</title>
+    <meta name="description" content="SpaceXSI tworzy Grok — zaawansowane modele sztucznej inteligencji do wnioskowania, generowania głosu, obrazów i nie tylko.">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Nagłówek strony -->
+    <!-- Nagłówek strony (bez górnego paska, logo po lewej, przyciski po prawej) -->
     <header class="header">
         <div class="header-container">
-            <nav class="nav">
+            <div class="header-left">
                 <!-- Logo -->
-                <a href="/" class="logo-link" aria-label="Wbcard homepage">
+                <a href="/" class="logo-link" aria-label="Strona główna SpaceXSI">
                     <svg width="63" height="24" viewBox="40 0 2176 831" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
                         <path d="M352 522 57 305H308L490 436Q417 478 352 522ZM766 831 545 668Q619 612 670 576L1018 831ZM294 831H40L70 803Q208 668 450.5 506.5Q693 345 1145.5 190Q1598 35 2216 0Q1995 19 1684.5 88.5Q1374 158 989 339Q604 520 294 831Z"></path>
                     </svg>
                 </a>
+                
+                <!-- Trzy odnośniki menu jeden pod drugim pod logo -->
+                <nav class="sidebar-nav">
+                    <a href="/grok">Produkty</a>
+                    <a href="https://docs.x.ai" target="_blank">Dokumentacja</a>
+                    <a href="/pricing">Cennik</a>
+                </nav>
+            </div>
 
-                <!-- Menu nawigacyjne -->
-                <ul class="nav-links">
-                    <li><a href="/grok">Products <span>▼</span></a></li>
-                    <li><a href="/solutions">Solutions <span>▼</span></a></li>
-                    <li><a href="/api">Developer <span>▼</span></a></li>
-                    <li><a href="/company">Company <span>▼</span></a></li>
-                    <li><a href="/pricing">Pricing</a></li>
-                    <li><a href="/news">News</a></li>
-                </ul>
-
-                <!-- Przyciski akcji w nagłówku -->
-                <div class="nav-actions">
-                    <a href="/contact-sales" class="btn btn-soft">Contact Sales</a>
-                    <a href="https://grok.com" target="_blank" class="btn btn-solid">Try for free</a>
-                </div>
-            </nav>
+            <!-- Dwa przyciski po prawej stronie -->
+            <div class="nav-actions">
+                <a href="/contact-sales" class="btn btn-soft">Kontakt z działem sprzedaży</a>
+                <a href="https://grok.com" target="_blank" class="btn btn-solid">Wypróbuj za darmo</a>
+            </div>
         </div>
     </header>
 
     <!-- Główna sekcja Hero -->
     <main class="main-content">
         <div class="hero-container">
-            <!-- Powiadomienie o nowym modelu -->
+            <!-- Powiadomienie -->
             <div class="hero-badge-wrapper">
                 <a href="/news/grok-4-7" class="hero-badge">
-                    <span class="badge-tag">New</span>
-                    <span class="badge-text"><strong>Meet Grok 4.7</strong> · Our new model</span>
+                    <span class="badge-tag">Nowość</span>
+                    <span class="badge-text"><strong>Poznaj Grok 4.7</strong> · Nasz nowy model</span>
                     <span class="badge-arrow">→</span>
                 </a>
             </div>
 
-            <!-- Główny nagłówek -->
+            <!-- Tytuł główny -->
             <h1 class="hero-title">
-                Frontier AI models for everything you build.
+                Najnowocześniejsze modele AI do wszystkiego, co tworzysz.
             </h1>
 
             <!-- Opis -->
             <div class="hero-desc">
-                <p>Reasoning, code, voice, images, and video. Trained on the world's largest supercluster.</p>
+                <p>Wnioskowanie, kod, głos, obrazy i wideo. Wytrenowane na największym superkomputerze na świecie.</p>
             </div>
 
-            <!-- Przyciski CTA w Hero -->
+            <!-- Przyciski CTA -->
             <div class="hero-cta">
-                <a href="https://console.x.ai" class="btn btn-solid btn-lg">Get API Access →</a>
-                <a href="https://docs.x.ai" class="btn btn-soft btn-lg">View Documentation</a>
+                <a href="https://console.x.ai" class="btn btn-solid btn-lg">Uzyskaj dostęp do API →</a>
+                <a href="https://docs.x.ai" class="btn btn-soft btn-lg">Zobacz dokumentację</a>
             </div>
         </div>
 
-        <!-- Sekcja kafelków (np. czat) -->
+        <!-- Sekcja kafelka czatu -->
         <div class="grid-container">
             <a href="/grok" class="card">
                 <div class="card-content">
-                    <div class="chat-bubble user">Explain quantum entanglement simply</div>
-                    <div class="chat-bubble ai">Two particles become linked — measuring one instantly determines the other, regardless of distance.</div>
-                    <div class="chat-bubble user">Why is the sky blue?</div>
-                    <div class="chat-bubble ai">Shorter blue wavelengths scatter more off air molec...</div>
+                    <div class="chat-bubble user">Wyjaśnij splątanie kwantowe w prosty sposób</div>
+                    <div class="chat-bubble ai">Dwie cząstczki zostają powiązane — zmierzona jedna natychmiast określa drugą, niezależnie od odległości.</div>
+                    <div class="chat-bubble user">Dlaczego niebo jest niebieskie?</div>
+                    <div class="chat-bubble ai">Krótsze niebieskie fale rozpraszają się silniej na cząsteczkach powietrza...</div>
                 </div>
             </a>
         </div>
