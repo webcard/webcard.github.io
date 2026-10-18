@@ -88,5 +88,25 @@
             </div>
         </div>
     </main>
+    <script>
+    // Tablica ze słowami rotacyjnymi
+    const words = ["klientów", "szybkość", "spokój", "niezależność", "przewagę"];
+    let currentIndex = 0;
+    const highlightElement = document.querySelector(".highlight");
+
+    setInterval(() => {
+        // Efekt zanikania (fade-out)
+        highlightElement.style.opacity = "0";
+
+        setTimeout(() => {
+            // Zmiana słowa na kolejne z listy
+            currentIndex = (currentIndex + 1) % words.length;
+            highlightElement.textContent = words[currentIndex];
+            
+            // Efekt pojawiania się (fade-in)
+            highlightElement.style.opacity = "1";
+        }, 300); // krótka pauza na zmianę tekstu w tle
+    }, 3000); // Rotacja dokładnie co 3 sekundy
+</script>
 </body>
 </html>
