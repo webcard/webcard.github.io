@@ -154,7 +154,10 @@ body {
 }
 
 .highlight {
-    color: var(--sunset);
+    color: var(--sunset); /* lub Twój kolor akcentu, np. #f97316 */
+    display: inline-block;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
 }
 
 .hero-desc {
