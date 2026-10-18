@@ -20,7 +20,7 @@ body {
     line-height: 1.5;
 }
 
-/* Brak górnego paska! Zamiast tego przypięcie elementów do lewego i prawego górnego rogu */
+/* Układ boczny: Lewy róg (logo + pionowe menu) i Prawy róg (przyciski) */
 .header-left-fixed {
     position: fixed;
     top: 24px;
@@ -29,7 +29,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    background: transparent; /* Brak tła / paska */
+    background: transparent;
 }
 
 .header-right-fixed {
@@ -39,17 +39,16 @@ body {
     z-index: 100;
     display: flex;
     gap: 12px;
-    background: transparent; /* Brak tła / paska */
+    background: transparent;
 }
 
 .logo-svg {
-    width: 140px;
+    width: 130px;
     height: auto;
     color: var(--primary);
     display: block;
 }
 
-/* Trzy odnośniki w pionie pod logo po lewej */
 .sidebar-nav {
     display: flex;
     flex-direction: column;
@@ -68,7 +67,7 @@ body {
     color: var(--primary);
 }
 
-/* Style przycisków: biała obwódka i tekst -> po najechaniu białe tło i czarny tekst */
+/* Style przycisków */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -79,14 +78,28 @@ body {
     text-decoration: none;
     padding: 10px 18px;
     transition: all 0.2s ease-in-out;
-    background-color: transparent;
-    color: var(--primary);
+}
+
+.btn-solid {
+    background-color: var(--primary);
+    color: var(--background);
     border: 1px solid var(--primary);
 }
 
-.btn:hover {
-    background-color: var(--primary);
-    color: var(--background);
+.btn-solid:hover {
+    background-color: transparent;
+    color: var(--primary);
+}
+
+.btn-soft {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--border);
+}
+
+.btn-soft:hover {
+    border-color: var(--primary);
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .btn-lg {
@@ -94,18 +107,7 @@ body {
     font-size: 16px;
 }
 
-.btn-soft, .btn-solid {
-    background-color: transparent;
-    color: var(--primary);
-    border: 1px solid var(--primary);
-}
-
-.btn-soft:hover, .btn-solid:hover {
-    background-color: var(--primary);
-    color: var(--background);
-}
-
-/* Główny kontener – zrobiony zapas od góry, żeby treść nie nachodziła na logo/przyciski */
+/* Główna sekcja */
 .main-content {
     max-width: 1280px;
     margin: 0 auto;
@@ -114,8 +116,8 @@ body {
 
 .hero-container {
     text-align: center;
-    max-width: 820px;
-    margin: 0 auto 70px auto;
+    max-width: 860px;
+    margin: 0 auto 120px auto;
 }
 
 .hero-badge-wrapper {
@@ -146,15 +148,15 @@ body {
 }
 
 .hero-title {
-    font-size: 50px;
-    font-weight: 450;
+    font-size: 48px;
+    font-weight: 500;
     letter-spacing: -0.03em;
     line-height: 1.15;
     margin-bottom: 20px;
 }
 
 .highlight {
-    color: var(--sunset); /* lub Twój kolor akcentu, np. #f97316 */
+    color: var(--sunset);
     display: inline-block;
     transition: opacity 0.3s ease-in-out;
     opacity: 1;
@@ -173,53 +175,60 @@ body {
     gap: 12px;
 }
 
-/* Kafelki z korzyściami */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+/* Style dla 5 sekcji korzyści (jedna pod drugą) */
+.advantages-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.card {
+.advantage-section {
     background-color: var(--card);
-    border-radius: 16px;
-    min-height: 200px;
     border: 1px solid var(--border);
-    transition: border-color 0.2s;
+    border-radius: 20px;
+    padding: 40px;
+    transition: border-color 0.2s ease;
 }
 
-.card:hover {
+.advantage-section:hover {
     border-color: rgba(255, 255, 255, 0.2);
 }
 
-.card-content {
+.advantage-header {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: 100%;
-    padding: 24px;
-    gap: 8px;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
 }
 
-.benefit-tag {
-    font-size: 11px;
+.advantage-num {
+    font-size: 13px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
     color: var(--sunset);
+    background-color: rgba(249, 115, 22, 0.1);
+    padding: 4px 10px;
+    border-radius: 9999px;
 }
 
-.benefit-title {
-    font-size: 18px;
-    font-weight: 600;
+.advantage-header h2 {
+    font-size: 26px;
+    font-weight: 500;
     color: var(--primary);
-    margin-top: 4px;
 }
 
-.benefit-desc {
-    font-size: 14px;
+.advantage-lead {
+    font-size: 17px;
+    font-weight: 500;
+    color: #e4e4e7;
+    margin-bottom: 10px;
+}
+
+.advantage-text {
+    font-size: 15px;
     color: #a1a1aa;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 /* RWD - Responsywność dla urządzeń mobilnych */
@@ -244,10 +253,10 @@ body {
     }
 
     .hero-title {
-        font-size: 34px;
+        font-size: 32px;
     }
 
-    .grid-container {
-        grid-template-columns: 1fr;
+    .advantage-section {
+        padding: 24px;
     }
 }
