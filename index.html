@@ -8,37 +8,31 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- Nagłówek (logo po lewej, pionowe menu pod nim, dwa przyciski po prawej) -->
-    <header class="header">
-        <div class="header-container">
-            <div class="header-left">
-                <!-- Logo -->
-                <a href="/" class="logo-link" aria-label="Strona główna WebCard">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 36" fill="none" class="logo-svg">
-                      <!-- Typografia w stylu kodu / modern tech -->
-                      <text x="0" y="25" fill="#FFFFFF" font-family="'JetBrains Mono', 'Fira Code', 'Roboto Mono', Monaco, monospace" font-size="21" font-weight="700" letter-spacing="-0.8">
-                        WebCard<tspan fill="#FFFFFF" opacity="0.4">.</tspan>
-                      </text>
-                      <!-- Subtelny akcent kursora/tagu kodu z prawej strony -->
-                      <path d="M148 11L155 18L148 25" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
-                    </svg>
-                </a>
-                
-                <!-- Trzy odnośniki menu jeden pod drugim pod logo -->
-                <nav class="sidebar-nav">
-                    <a href="#oferta">Oferta</a>
-                    <a href="#zalety">Dlaczego WebCard?</a>
-                    <a href="#kontakt">Kontakt</a>
-                </nav>
-            </div>
-
-            <!-- Dwa przyciski po prawej stronie -->
-            <div class="nav-actions">
-                <a href="#kontakt" class="btn btn-soft">Zamów</a>
-                <a href="#oferta" class="btn btn-solid">Sprawdź pakiety</a>
-            </div>
-        </div>
+    <!-- Boczne / Rogowe przyklejone elementy (zamiast paska u góry) -->
+    
+    <!-- Lewa strona: Logo na górze, pod nim 3 linki -->
+    <header class="header-left-fixed">
+        <a href="/" class="logo-link" aria-label="Strona główna WebCard">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 36" fill="none" class="logo-svg">
+              <text x="0" y="25" fill="#FFFFFF" font-family="'JetBrains Mono', 'Fira Code', 'Roboto Mono', Monaco, monospace" font-size="21" font-weight="700" letter-spacing="-0.8">
+                WebCard<tspan fill="#FFFFFF" opacity="0.4">.</tspan>
+              </text>
+              <path d="M148 11L155 18L148 25" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+            </svg>
+        </a>
+        
+        <nav class="sidebar-nav">
+            <a href="#oferta">Oferta</a>
+            <a href="#zalety">Dlaczego WebCard?</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
     </header>
+
+    <!-- Prawa strona: Dwa przyciski wiszące w prawym górnym rogu -->
+    <div class="header-right-fixed">
+        <a href="#kontakt" class="btn btn-soft">Zamów</a>
+        <a href="#oferta" class="btn btn-solid">Sprawdź pakiety</a>
+    </div>
 
     <!-- Główna sekcja Hero -->
     <main class="main-content">
