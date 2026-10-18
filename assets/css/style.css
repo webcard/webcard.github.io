@@ -20,39 +20,36 @@ body {
     line-height: 1.5;
 }
 
-/* Nagłówek fixed */
-.header {
+/* Brak górnego paska! Zamiast tego przypięcie elementów do lewego i prawego górnego rogu */
+.header-left-fixed {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: 24px;
+    left: 32px;
     z-index: 100;
-    padding: 24px;
-    background-color: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.header-container {
-    max-width: 1280px;
-    margin: 0 auto;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-.header-left {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    background: transparent; /* Brak tła / paska */
+}
+
+.header-right-fixed {
+    position: fixed;
+    top: 24px;
+    right: 32px;
+    z-index: 100;
+    display: flex;
+    gap: 12px;
+    background: transparent; /* Brak tła / paska */
 }
 
 .logo-svg {
-    width: 51px;
+    width: 140px;
     height: auto;
     color: var(--primary);
+    display: block;
 }
 
+/* Trzy odnośniki w pionie pod logo po lewej */
 .sidebar-nav {
     display: flex;
     flex-direction: column;
@@ -69,11 +66,6 @@ body {
 
 .sidebar-nav a:hover {
     color: var(--primary);
-}
-
-.nav-actions {
-    display: flex;
-    gap: 12px;
 }
 
 /* Style przycisków: biała obwódka i tekst -> po najechaniu białe tło i czarny tekst */
@@ -113,17 +105,17 @@ body {
     color: var(--background);
 }
 
-/* Główny kontener */
+/* Główny kontener – zrobiony zapas od góry, żeby treść nie nachodziła na logo/przyciski */
 .main-content {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 200px 24px 80px 24px;
+    padding: 160px 24px 80px 24px;
 }
 
 .hero-container {
     text-align: center;
     max-width: 820px;
-    margin: 0 auto 100px auto;
+    margin: 0 auto 70px auto;
 }
 
 .hero-badge-wrapper {
@@ -161,13 +153,8 @@ body {
     margin-bottom: 20px;
 }
 
-/* Animowane rotujące słowo */
-.rotating-word {
+.highlight {
     color: var(--sunset);
-    display: inline-block;
-    transition: opacity 0.2s ease-in-out;
-    min-width: 180px;
-    text-align: left;
 }
 
 .hero-desc {
@@ -183,123 +170,81 @@ body {
     gap: 12px;
 }
 
-/* Style dla 5 sekcji zalet (pionowe układy) */
-.advantages-section {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    max-width: 900px;
-    margin: 0 auto;
+/* Kafelki z korzyściami */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
 }
 
-.advantage-card {
+.card {
     background-color: var(--card);
+    border-radius: 16px;
+    min-height: 200px;
     border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 40px;
-    transition: border-color 0.2s ease;
+    transition: border-color 0.2s;
 }
 
-.advantage-card:hover {
+.card:hover {
     border-color: rgba(255, 255, 255, 0.2);
 }
 
-.advantage-header {
+.card-content {
     display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 12px;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    padding: 24px;
+    gap: 8px;
 }
 
-.advantage-num {
-    font-size: 14px;
+.benefit-tag {
+    font-size: 11px;
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     color: var(--sunset);
-    background-color: rgba(249, 115, 22, 0.1);
-    padding: 4px 10px;
-    border-radius: 9999px;
 }
 
-.advantage-header h2 {
-    font-size: 28px;
-    font-weight: 500;
-    color: var(--primary);
-}
-
-.advantage-lead {
+.benefit-title {
     font-size: 18px;
-    font-weight: 500;
-    color: #e4e4e7;
-    margin-bottom: 12px;
-}
-
-.advantage-text {
-    font-size: 15px;
-    color: #a1a1aa;
-    line-height: 1.6;
-}
-
-/* Stopka (Footer) oddzielona białą linią */
-.footer {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 40px 24px;
-    margin-top: 80px;
-}
-
-.footer-container {
-    max-width: 1280px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-
-.footer-copyright {
-    font-size: 14px;
-    color: #a1a1aa;
-}
-
-.footer-links {
-    display: flex;
-    gap: 24px;
-}
-
-.footer-links a {
-    color: #a1a1aa;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.2s;
-}
-
-.footer-links a:hover {
+    font-weight: 600;
     color: var(--primary);
+    margin-top: 4px;
 }
 
-/* Responsywność */
+.benefit-desc {
+    font-size: 14px;
+    color: #a1a1aa;
+    line-height: 1.5;
+}
+
+/* RWD - Responsywność dla urządzeń mobilnych */
 @media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        gap: 16px;
+    .header-left-fixed {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-bottom: 20px;
+    }
+
+    .header-right-fixed {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+    }
+
+    .main-content {
+        padding-top: 40px;
     }
 
     .hero-title {
-        font-size: 32px;
+        font-size: 34px;
     }
 
-    .rotating-word {
-        min-width: auto;
-        display: inline;
-    }
-
-    .advantage-card {
-        padding: 24px;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
+    .grid-container {
+        grid-template-columns: 1fr;
     }
 }
