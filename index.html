@@ -8,16 +8,13 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- Boczne / Rogowe przyklejone elementy (zamiast paska u góry) -->
-    
-    <!-- Lewa strona: Logo na górze, pod nim 3 linki -->
     <header class="header-left-fixed">
         <a href="/" class="logo-link" aria-label="Strona główna WebCard">
-           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 36" fill="none" class="logo-svg">
-  <!-- Typografia w stylu kodu / modern tech - idealnie ostra i czytelna -->
-  <text x="0" y="25" fill="#FFFFFF" font-family="'JetBrains Mono', 'Fira Code', 'Roboto Mono', Monaco, monospace" font-size="21" font-weight="700" letter-spacing="-0.8">
-    WebCard<tspan fill="#FFFFFF" opacity="0.4">.</tspan>
-</svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 36" fill="none" class="logo-svg">
+              <text x="0" y="25" fill="#FFFFFF" font-family="'JetBrains Mono', 'Fira Code', 'Roboto Mono', Monaco, monospace" font-size="21" font-weight="700" letter-spacing="-0.8">
+                WebCard<tspan fill="#FFFFFF" opacity="0.4">.</tspan>
+              </text>
+            </svg>
         </a>
         
         <nav class="sidebar-nav">
@@ -27,16 +24,13 @@
         </nav>
     </header>
 
-    <!-- Prawa strona: Dwa przyciski wiszące w prawym górnym rogu -->
     <div class="header-right-fixed">
         <a href="#kontakt" class="btn btn-soft">Zamów</a>
         <a href="#oferta" class="btn btn-solid">Sprawdź pakiety</a>
     </div>
 
-    <!-- Główna sekcja Hero -->
     <main class="main-content">
         <div class="hero-container">
-            <!-- Powiadomienie / Badge -->
             <div class="hero-badge-wrapper">
                 <div class="hero-badge">
                     <span class="badge-tag">Nowy Standard</span>
@@ -44,50 +38,71 @@
                 </div>
             </div>
 
-            <!-- Tytuł główny -->
             <h1 class="hero-title">
                 Nowoczesna wizytówka internetowa, da Tobie <span class="highlight">klientów</span>.
             </h1>
 
-            <!-- Opis -->
             <div class="hero-desc">
                 <p>Błyskawiczna wizytówka dla Twojej firmy, zoptymalizowana pod Google i AI. Bez opłat za hosting.</p>
             </div>
 
-            <!-- Przyciski CTA -->
             <div class="hero-cta">
                 <a href="#kontakt" class="btn btn-solid btn-lg">Zamów →</a>
                 <a href="#zalety" class="btn btn-soft btn-lg">Dowiedz się więcej</a>
             </div>
         </div>
 
-        <!-- Sekcja kart korzyści -->
-        <div class="grid-container" id="zalety">
-            <div class="card">
-                <div class="card-content">
-                    <div class="benefit-tag">01. Prędkość</div>
-                    <div class="benefit-title">Błyskawiczne ładowanie</div>
-                    <div class="benefit-desc">Strona otwiera się w ułamku sekundy na każdym telefonie, zatrzymując klienta na dłużej.</div>
+        <div class="advantages-container" id="zalety">
+            
+            <section class="advantage-section">
+                <div class="advantage-header">
+                    <span class="advantage-num">01</span>
+                    <h2>Błyskawiczny kontakt = Prostsza sprzedaż</h2>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <div class="benefit-tag">02. Portfel</div>
-                    <div class="benefit-title">Hosting 0 zł na zawsze</div>
-                    <div class="benefit-desc">Żadnych corocznych, drogich opłat za serwery. Płacisz raz za projekt i masz święty spokój.</div>
+                <p class="advantage-lead">Cel: Ułatwić klientowi znalezienie tego czego szuka.</p>
+                <p class="advantage-text">Zamiast skomplikowanych formularzy dajesz klientom to, czego chcą: jedno kliknięcie, by zadzwonić, napisać wiadomość na WhatsAppie lub sprawdzić dojazd. Bez zbędnego szumu.</p>
+            </section>
+
+            <section class="advantage-section">
+                <div class="advantage-header">
+                    <span class="advantage-num">02</span>
+                    <h2>Błyskawiczne ładowanie = Więcej klientów</h2>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <div class="benefit-tag">03. Bezpieczeństwo</div>
-                    <div class="benefit-title">Brak podatności na awarie</div>
-                    <div class="benefit-desc">Brak bazy danych i wtyczek oznacza, że strona nie ma się jak zepsuć ani zostać zhakowana.</div>
+                <p class="advantage-lead">Cel: Klient nie może czekać.</p>
+                <p class="advantage-text">Tworzymy minimalistyczne strony w technologii statycznej, które ładują się w ułamku sekundy na każdym smartfonie. Brak czekania oznacza, że potencjalny klient nie opuści Twojej witryny zanim zapozna się z ofertą.</p>
+            </section>
+            
+            <section class="advantage-section">
+                <div class="advantage-header">
+                    <span class="advantage-num">03</span>
+                    <h2>Zero awarii = Święty spokój</h2>
                 </div>
-            </div>
+                <p class="advantage-lead">Cel: Bezawaryjne działanie, strona zawsze dostępna dla klienta.</p>
+                <p class="advantage-text">Brak bazy danych i wtyczek oznacza, że strona nie ma się jak zepsuć ani zawiesić. Nie musisz bać się awarii i ataków hakerskich. Po prostu działa..</p>
+            </section>
+
+            <section class="advantage-section">
+                <div class="advantage-header">
+                    <span class="advantage-num">04</span>
+                    <h2>Niezależność - Minimalne koszty utrzymania</h2>
+                </div>
+                <p class="advantage-lead">Cel: nie przepłacać.</p>
+                <p class="advantage-text">Zyskujesz darmowy hosting w chmurze i płacisz wyłącznie za domenę, bez żadnych ukrytych abonamentów.</p>
+            </section>
+
+            <section class="advantage-section">
+                <div class="advantage-header">
+                    <span class="advantage-num">05</span>
+                    <h2>Przewaga - Świetna widoczność w Google i AI</h2>
+                </div>
+                <p class="advantage-lead">Cel: Wyprzedzić konkurencję.</p>
+                <p class="advantage-text">Podczas gdy konkurencja boryka się z przeładowanymi i skomplikowanymi witrynami, Twoja wizytówka działa lekko, przejrzyście i natychmiastowo. Lekki kod jest wzorowo indeksowany przez Google oraz roboty AI, stawiając Cię o krok przed resztą rynku.</p>
+            </section>
+
         </div>
     </main>
+
     <script>
-    // Tablica ze słowami rotacyjnymi
     const words = ["klientów", "szybkość", "spokój", "niezależność", "przewagę"];
     let currentIndex = 0;
     const highlightElement = document.querySelector(".highlight");
@@ -105,6 +120,6 @@
             highlightElement.style.opacity = "1";
         }, 300); // krótka pauza na zmianę tekstu w tle
     }, 3000); // Rotacja dokładnie co 3 sekundy
-</script>
+    </script>
 </body>
 </html>
